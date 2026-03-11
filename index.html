@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retiro-Viaje a India</title>
+<!-- GA4 placeholder: paste your gtag script here -->
+<!-- Meta Pixel placeholder: paste your pixel script here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  :root {
+    --white: #FFFFFF;
+    --off-white: #FAFAFA;
+    --gray-100: #F2F2F2;
+    --gray-200: #E5E5E5;
+    --gray-400: #A3A3A3;
+    --gray-600: #6B6B6B;
+    --gray-900: #1A1A1A;
+    --accent: #2C2C2C;
+    --accent-hover: #4A4A4A;
+  }
+
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--gray-900);
+    background: var(--white);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* HERO - compact, not full screen */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    min-height: 480px;
+    max-height: 700px;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('images/hero.jpg');
+    background-size: cover;
+    background-position: center 30%;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.08) 0%,
+      rgba(0,0,0,0.03) 40%,
+      rgba(0,0,0,0.45) 100%
+    );
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3rem 2rem 2.5rem;
+    z-index: 2;
+  }
+
+  .hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    font-weight: 400;
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 0.6rem;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 300;
+    font-size: clamp(2.6rem, 7vw, 4.5rem);
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 0.6rem;
+  }
+
+  .hero-subtitle {
+    font-weight: 300;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    color: rgba(255,255,255,0.85);
+    max-width: 500px;
+  }
+
+  .hero-date {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 400;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.6);
+    border-left: 2px solid rgba(255,255,255,0.3);
+    padding-left: 1rem;
+  }
+
+  /* TRUST LINE - slim */
+  .trust-strip {
+    padding: 1.5rem 2rem;
+    background: var(--white);
+    text-align: center;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .trust-strip p {
+    max-width: 560px;
+    margin: 0 auto;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--gray-600);
+  }
+
+  /* FORM SECTION with intro text */
+  .form-section {
+    padding: 2rem 2rem 2.5rem;
+    background: var(--gray-100);
+  }
+
+  .form-inner {
+    max-width: 460px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .form-intro {
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: var(--gray-600);
+    margin-bottom: 1.25rem;
+  }
+
+  .form-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: var(--gray-900);
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group {
+    margin-bottom: 0.65rem;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--gray-200);
+    background: var(--white);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--gray-900);
+    border-radius: 0;
+    transition: border-color 0.3s ease;
+    outline: none;
+  }
+
+  .form-group input:focus {
+    border-color: var(--gray-900);
+  }
+
+  .form-group input::placeholder {
+    color: var(--gray-400);
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 1.05rem;
+    margin-top: 0.5rem;
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    background: var(--accent-hover);
+  }
+
+  .form-success {
+    display: none;
+    padding: 2rem 0;
+  }
+
+  .form-success h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-success p {
+    font-size: 0.95rem;
+    color: var(--gray-600);
+  }
+
+  /* PHOTO STRIP at bottom */
+  .photo-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .photo-strip img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .photo-strip {
+      grid-template-columns: 1fr;
+    }
+    .photo-strip img {
+      height: 260px;
+    }
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 2rem 2rem;
+    text-align: center;
+    background: var(--white);
+    border-top: 1px solid var(--gray-200);
+  }
+
+  footer .organizers {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--gray-900);
+    margin-bottom: 0.3rem;
+  }
+
+  footer .links {
+    font-size: 0.85rem;
+    color: var(--gray-400);
+  }
+
+  footer a {
+    color: var(--gray-600);
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    color: var(--gray-900);
+  }
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Rishikesh · Netala · Himalayas</p>
+        <h1 class="hero-title">Retiro-Viaje<br>a India</h1>
+        <p class="hero-subtitle">Yoga, cultura y vida en un auténtico ashram en el Himalaya</p>
+        <p class="hero-date">Del 3 al 17 de octubre de 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust-strip">
+    <p>Egiarte te acompaña durante todo el viaje. Conoce Rishikesh, Netala y a los maestros del ashram de primera mano. Tú solo tienes que dejarte llevar.</p>
+  </section>
+
+  <!-- FORM -->
+  <section class="form-section">
+    <div class="form-inner">
+      <p class="form-intro">Dos semanas practicando yoga tradicional con maestros locales, recorriendo el Himalaya y viviendo la India desde dentro.</p>
+      <h2>Recibe el dossier completo</h2>
+      <div id="formContainer">
+        <div class="form-group">
+          <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+        </div>
+        <button class="submit-btn" onclick="handleSubmit()">Quiero recibir el dossier</button>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <h3>¡Gracias!</h3>
+        <p>En breve recibirás el dossier en tu correo electrónico con itinerario, precios y todo lo que necesitas saber.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOS as visual footer -->
+  <div class="photo-strip">
+    <img src="images/foto1.jpg" alt="Explorando la India">
+    <img src="images/foto2.jpg" alt="Yoga en el ashram">
+    <img src="images/foto3.jpg" alt="Práctica con maestros locales">
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="organizers">Organizan: Egiarte y Yoogaem</p>
+    <p class="links"><a href="https://www.instagram.com/egiartegimenez/" target="_blank">@egiartegimenez</a> · <a href="https://www.instagram.com/yoogaem/" target="_blank">@yoogaem</a></p>
+  </footer>
+
+  <script>
+    const WEBHOOK_URL = 'https://YOUR-N8N-INSTANCE.app.n8n.cloud/webhook/REPLACE-ME';
+
+    async function handleSubmit() {
+      const nombre = document.getElementById('nombre').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const telefono = document.getElementById('telefono').value.trim();
+
+      if (!nombre || !email || !telefono) {
+        alert('Por favor, rellena todos los campos.');
+        return;
+      }
+
+      const btn = document.querySelector('.submit-btn');
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+
+      try {
+        await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nombre, email, telefono, timestamp: new Date().toISOString() })
+        });
+      } catch (e) {
+        console.log('Webhook sent (or placeholder)');
+      }
+
+      document.getElementById('formContainer').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
